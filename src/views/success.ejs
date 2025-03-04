@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+
+    <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded shadow-md w-full max-w-4xl">
+            <h1 class="text-2xl font-bold mb-4">Web Page Screenshot By Puppeteer</h1>
+            <p class="mb-4">Enter a URL to take a screenshot of the page. Default is <a
+                    href="https://news.ycombinator.com" class="text-blue-500 underline">Hacker News</a>.</p>
+            <form method="post" class="space-y-4">
+                <div>
+                    <label for="url" class="block text-sm font-medium text-gray-700">URL</label>
+                    <input type="text" id="url" name="url"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        placeholder="https://news.ycombinator.com">
+                </div>
+                <button type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer">
+                    Take Screenshot
+                </button>
+            </form>
+            <% if (page_title) { %>
+                <h2 class="text-xl font-bold mt-4">Screenshot of the Page</h2>
+                <p class="mb-4">URL: <a href="<%= url %>" class="text-blue-500 underline">
+                        <%= url %>
+                    </a></p>
+                <p class="mb-4">Page Title: <%= page_title %>
+                </p>
+                <img src="data:image/png;base64,<%= screenshot_base64 %>" alt="Screenshot"
+                    class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-xl font-bold mb-2">All Links on the Page</h2>
+                <ul class="list-disc pl-4">
+                    <% links.forEach(function(link) { %>
+                        <li><a href="<%= link.href %>" class="text-blue-500 underline">
+                                <%= link.text %>
+                                    <span class="text-gray-500 text-sm">(<%= link.href %>)</span>
+                            </a></li>
+                        <% }); %>
+                </ul>
+                <% } %>
+        </div>
+    </body>
+
+</html>

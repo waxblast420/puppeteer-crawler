@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+
+    <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded shadow-md w-full max-w-4xl">
+            <h1 class="text-2xl font-bold mb-4">Error</h1>
+            <p class="mb-4">An error occurred while taking the screenshot: <%= error_message %>
+            </p>
+            <a href="/" class="text-blue-500 underline">Go back</a>
+        </div>
+    </body>
+
+</html>
