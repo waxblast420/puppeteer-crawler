@@ -53,7 +53,7 @@ app.post('/', async (req, res) => {
         // Create a new browser page
         const page = await browser.newPage();
         // Navigate to the specified URL and wait until the network is idle
-        await page.goto(url, { waitUntil: 'networkidle2' });
+        await page.goto(url, { waitUntil: 'networkidle2', timeout: 0 });
         // Take a screenshot of the page
         const screenshot = await page.screenshot();
         // Get the page title
