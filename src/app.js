@@ -96,8 +96,8 @@ app.post('/', async (req, res) => {
     }
 });
 
-// Set the port, use environment variable PORT or default to 3000
-const port = process.env.PORT || 3000;
+// Set the port, use environment variable PORT or default to 8080
+const port = process.env.PORT || 8080;
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

@@ -1,0 +1,5 @@
+runtime: node
+startCommand: node src/app.js
+buildCommand: sh prepare_puppeteer_env.sh
+port: 8080
+memory: 1024mb
