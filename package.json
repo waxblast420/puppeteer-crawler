@@ -1,20 +1,17 @@
 {
   "name": "puppeteer-action",
   "version": "1.0.0",
+  "description": "A modern Puppeteer web automation app using Express.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["puppeteer", "express", "automation", "web", "crawler"],
+  "author": "waxblast420",
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.20.3",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "puppeteer": "^24.3.0",
     "base64-js": "^1.5.1"
   }
-}
